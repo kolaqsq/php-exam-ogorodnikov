@@ -2,14 +2,14 @@
 function passCheck($password, $data)
 {
     if ($password <> '') {
-        $result = mysqli_query($data, "SELECT `passwords` FROM `admins` WHERE passwords = '$password'");
+        $result = mysqli_query($data, "select passwords from admins where passwords = '$password'");
         $row = mysqli_fetch_assoc($result);
-
-        if ($password === $row['passwords']) {
-            header("Location: test.php", true, 301);
-            exit();
-        } else return '';
-    } else return '';
+        if (isset($row['passwords']))
+            if (($password === $row['passwords'])) {
+                header("Location: admin.php", true, 301);
+                exit();
+            } else return null;
+    } else return null;
 }
 
 ?>
