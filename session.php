@@ -34,10 +34,10 @@ if (!isset($_POST['forth']))
 ?>
 <form action="<?php addData($_GET['session_id'], $database, $_POST['first'], $_POST['second'], $_POST['third'], $_POST['forth']) ?>" method="post">
     <label for="first">Добавьте вопрос №1</label>
-    <input type="number" name="first" id="first"><br>
+    <input type="text" name="first" id="first"><br>
 
     <label for="second">Добавьте вопрос №2</label>
-    <input type="number" min="0" name="second" id="second"><br>
+    <input type="text" min="0" name="second" id="second"><br>
 
     <label for="third">Добавьте вопрос №3</label>
     <input type="text" maxlength="30" name="third" id="third"><br>
