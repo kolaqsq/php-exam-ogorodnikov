@@ -5,8 +5,8 @@ function addData($id, $data, $desc)
 
 
     mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 1, $desc)");
-//    header("Location: admin.php", true, 301);
-//    exit();
+    header("Location: admin.php", true, 301);
+    exit();
 }
 
 $database = mysqli_connect('std-mysql', 'std_950', '901109qsq', 'std_950');
