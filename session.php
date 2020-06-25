@@ -1,9 +1,12 @@
 <?php
-function addData($id, $data, $desc)
+function addData($id, $data, $first, $second, $third, $forth)
 {
 
 
-    mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 1, $desc)");
+    mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 1, $first)");
+    mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 2, $second)");
+    mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 3, $third)");
+    mysqli_query($data, "insert into questions(session_id, type, description) values ($id, 4, $forth)");
 //    header("Location: admin.php", true, 301);
 //    exit();
 }
@@ -32,7 +35,7 @@ if (!isset($_POST['forth']))
     $_POST['forth'] = '';
 
 ?>
-<form action="<?php addData($_GET['session_id'], $database, $_POST['first']) ?>" method="post">
+<form action="<?php addData($_GET['session_id'], $database, $_POST['first'], $_POST['second'], $_POST['third'], $_POST['forth']) ?>" method="post">
     <label for="first">Добавьте вопрос №1</label>
     <input type="number" name="first" id="first"><br>
 
